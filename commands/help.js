@@ -1,5 +1,4 @@
 const { MessageEmbed } = require('discord.js');
-const { MessageButton, MessageActionRow } = require("discord-buttons")
 
 module.exports = {
     name: 'help',
@@ -16,7 +15,7 @@ module.exports = {
         **!addrole <member> <role>** - You can add a role to a specific member by using this command!\n
         **!removerole <member> <role>** - You can remove a role from a specific member by using this command!\n
         **!members** - Check the amount of members in our server!\n
-        **!suggest <suggestion>** - Use this command to give us an idea about our server!\n\n
+        **!suggest <suggestion>** - Use this command to give us an idea about our server!
         **Fun Commands (More COMING SOON!):**\n\n
         **!8ball <question>** - Ask me anything!\n
         **Marioo** - If your message contains Marioo or marioo it will print something funny :D\n
@@ -27,22 +26,6 @@ module.exports = {
         **!ping** - Check out my ping!\n
         **!serverinfo** - Learn more about this server!\n
         **!uptime** - Check out my uptime!\n
-        **!userinfo**/**!userinfo <user>** - Prints personal information or information about another member!
-        `);
-        const next = new MessageButton()
-        .setStyle("green")
-        .setLabel("Next")
-        .setID("1")
-        const back = new MessageButton()
-        .setStyle("red")
-        .setLabel("Back")
-        .setID("2")
-        let row = new MessageActionRow()
-        .addComponent(next)
-        .addComponent(back)
-        message.channel.send({
-            embed: embed,
-            component: row
-    })
+        **!userinfo**/**!userinfo <user>** - Prints personal information or information about another member!`);
     }
 };
