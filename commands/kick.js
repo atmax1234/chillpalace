@@ -11,7 +11,9 @@ module.exports = {
         else if(target){
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.kick();
-            message.channel.send(`${target} has been kicked`);
+            message.channel.send(`${target} has been kicked!`);
         }
+        if(target.hasPermission("KICK_MEMBERS")) return message.channel.send(`You can't kick this user..LMAO`)
+        if(target == message.author.id) return message.channel.send(`Why you want to kick yourself!? LMAO`)
     }
 }
