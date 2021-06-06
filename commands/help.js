@@ -29,5 +29,15 @@ module.exports = {
         **!uptime** - Check out my uptime!\n
         **!userinfo**/**!userinfo <user>** - Prints personal information or information about another member!
         `);
+        const next = new MessageButton()
+        .setStyle("green")
+        .setLabel("Next")
+        .setID("next")
+        const back = new MessageButton()
+        .setStyle("red")
+        .setLabel("Back")
+        .setID("back")
+        message.channel.send(embed, {buttons:[
+            next,back]});
     }
 };
