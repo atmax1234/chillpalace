@@ -37,7 +37,9 @@ module.exports = {
         .setStyle("red")
         .setLabel("Back")
         .setID("back")
-        message.channel.send(embed, {buttons:[
-            next,back]});
+        message.channel.send("Hello", {
+            buttons: [next, back],
+            embed: embed
+    })
     }
 };
