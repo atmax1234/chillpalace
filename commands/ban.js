@@ -19,13 +19,16 @@ module.exports = {
              */
             member
               .ban()
-              .then(member => {
-                guild.members.ban(id);
-                message.channel.send("*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* **" + member.displayName + "** *getting banned :hammer:*");
-            })
-            .catch(() => {
-                message.channel.send("Sorry, you can't ban this member");
-            });
+              .then(() => {
+                // We let the message author know we were able to kick the person
+                message.reply(`*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* **" + member.displayName + "** *getting banned :hammer:*`);
+              })
+              .catch(err => {
+                // An error happened
+                // This is generally due to the bot not being able to kick the member,
+                // either due to missing permissions or role hierarchy
+                message.reply('I was unable to ban the member');
+              });
           } else {
             // The mentioned user isn't in this guild
             message.reply("That user isn't in this guild!");
