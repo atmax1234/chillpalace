@@ -6,6 +6,7 @@ module.exports = {
     permissions: [],
 
     async execute(message, args, Discord, client) {
+        try{
         const channel = message.channel.id;
         const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "Ladies");
         const blueTeamRole = message.guild.roles.cache.find(role => role.name === "Boys");
@@ -65,6 +66,10 @@ module.exports = {
                 return;
             }
         });
+    }
+        catch (err){
+            console.log(err);
+        }
     }
  
 }   
