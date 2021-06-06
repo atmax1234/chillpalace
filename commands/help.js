@@ -18,6 +18,7 @@ module.exports = {
         **!suggest <suggestion>** - Use this command to give us an idea about our server!\n\n
         **Fun Commands (More COMING SOON!):**\n\n
         **!8ball <question>** - Ask me anything!\n
+        **Marioo** - If your message contains Marioo or marioo it will print something funny :D\n
         **!Hello** - Greeting command :)\n\n
         **Info Commands**\n\n
         **!botinfo** - Learn more about me!\n
