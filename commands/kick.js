@@ -5,15 +5,23 @@ module.exports = {
     permissions: ["KICK_MEMBERS"],
 
     execute(message, args){
-        const target = message.mentions.users.first();
-        if(!args[0]) return message.channel.send(`Please provide a user! For more information use help command!`)
-        if(!target) return message.channel.send(`Something went wrong, please try again!`);
-        else if(target){
-            const memberTarget = message.guild.members.cache.get(target.id);
-            memberTarget.kick();
-            message.channel.send(`${target} has been kicked!`);
+        if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) {
+            return message.channel.send('You do not have the permission for kick users!');
         }
-        if(target.hasPermission("KICK_MEMBERS")) return message.channel.send(`You can't kick this user..LMAO`)
-        if(target == message.author.id) return message.channel.send(`Why you want to kick yourself!? LMAO`)
+        if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+            return message.channel.send("I don’t have the permission for kick users!");
+        }
+        if (message.mentions.users.size === 0) {
+            return message.channel.send("You need to ping a user or the user can't be found!");
+        }
+        var member = message.mentions.members.first();
+        member
+            .kick()
+            .then(member => {
+                message.channel.send(member.displayName + " has been successfully kicked");
+            })
+            .catch(() => {
+                message.channel.send("Sorry, you can't kick this member");
+            });
     }
 }
