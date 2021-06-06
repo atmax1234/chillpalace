@@ -1,8 +1,8 @@
 module.exports = {
-    name: 'kick',
-    aliases: ['k'],
-    description: "This command kicks a member!",
-    permissions: ["KICK_MEMBERS"],
+    name: 'ban',
+    aliases: ['b'],
+    description: "This command bans a member!",
+    permissions: ["BAN_MEMBERS"],
 
     execute(message, args, client){
         const user = message.mentions.users.first();
@@ -32,7 +32,7 @@ module.exports = {
           }
           // Otherwise, if no user was mentioned
         } else {
-          message.reply("You didn't mention the user to kick!");
+          message.reply("You didn't mention the user to ban!");
         }
     }
 };
