@@ -1,6 +1,6 @@
 module.exports = client => {
     client.on('guildMemberAdd', (member) =>{
-        client.channels.cache.find(channel => channel.name === "Welcome");
+        client.channels.cache.find(channel => channel.name === "welcome");
         const message = `Welcome <@${member.id}> to our server! Make sure to check out the rules channel!`
         channel.send(message)
     })
