@@ -37,8 +37,11 @@ module.exports = {
         .setStyle("red")
         .setLabel("Back")
         .setID("back")
-        message.channel.send("Hello", {
-            buttons: [next, back],
+        let row = new MessageActionRow()
+        .addComponent(myButton)
+        .addComponent(myButton2);
+        message.channel.send({
+            component: row,
             embed: embed
     })
     }
