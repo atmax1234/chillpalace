@@ -8,7 +8,7 @@ module.exports = client => {
         .setColor('RANDOM')
         .setAuthor('ChillPalace')
         .setTitle('Welcome!')
-        .setDescription(`<@${member} just joined the server! Make sure to read #rules!`)
+        .setDescription(`${member} just joined the server! Make sure to read #rules!`)
         .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
         .setFooter('Have fun!')
 
