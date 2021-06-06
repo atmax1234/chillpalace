@@ -18,7 +18,7 @@ module.exports = {
              * There are big differences between a user and a member
              */
             member
-              .ban('Idk why it happend so quick...')
+              .ban()
               .then(member => {
                 guild.members.ban(id);
                 message.channel.send("*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* **" + member.displayName + "** *getting banned :hammer:*");
