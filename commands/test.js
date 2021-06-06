@@ -6,7 +6,7 @@ module.exports = {
     description: "buttons test",
     usage: "type !test",
     permissions: [],
-    execute(message,args, cmd, client, Discord){
+    async execute(message,args, cmd, client, Discord){
     let firstbutton = new MessageButton().setStyle("green").setID("1").setLabel("<")
     let secondbutton = new MessageButton().setStyle("blurple").setID("2").setLabel(">")
     let thirdbutton = new MessageButton().setStyle("red").setID("3").setLabel("JUMP TO OVERVIEW")
