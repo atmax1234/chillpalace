@@ -9,9 +9,8 @@ module.exports = client => {
         .setAuthor('ChillPalace')
         .setTitle('Welcome!')
         .setDescription(`<@${member} just joined the server! Make sure to read #rules!`)
-        .setThumbnail(message.user.avatarURL)
+        .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
         .setFooter('Have fun!')
-        .setTimestamp();
 
     channel.send(welcomeEmbed);
     })

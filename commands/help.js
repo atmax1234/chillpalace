@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const { MessageButton } = require("discord-buttons")
 
 module.exports = {
     name: 'help',
@@ -28,6 +29,5 @@ module.exports = {
         **!uptime** - Check out my uptime!\n
         **!userinfo**/**!userinfo <user>** - Prints personal information or information about another member!
         `);
-        message.channel.send(embed)
     }
 };
