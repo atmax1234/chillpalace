@@ -11,7 +11,12 @@ module.exports = {
         .setColor('RANDOM')
         .setTitle('Thoose are my commands:')
         .setDescription(`**Main Commands:**\n\n
-        **!help** - Prints all the information about my commands\n
+        **!help** - Prints all the information about my commands!\n
+        **!mute** - Mutes a specified user!\n
+        **!unmute** - Removes the mute role from a specified user!\n
+        **!ban** - Bans a specified user!\n
+        **!kick** - Kicks a specified user!\n
+        **!clear/purge** - Clears a specified amount of messages!\n
         **!addrole <member> <role>** - You can add a role to a specific member by using this command!\n
         **!removerole <member> <role>** - You can remove a role from a specific member by using this command!\n
         **!members** - Check the amount of members in our server!\n
