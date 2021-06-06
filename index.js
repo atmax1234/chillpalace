@@ -24,3 +24,4 @@ client.on('guildMemberAdd', guildMember =>{
 })
 
 client.login(process.env.token);
+welcome(client)
