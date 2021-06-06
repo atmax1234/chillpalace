@@ -22,10 +22,10 @@ client.on('guildMemberAdd', guildMember =>{
 });*/
 
 client.on("message", async (message) => {
-    if(!message.guild || message.author.bot || !message.content.trim().startsWith(config.prefix)) return;
+    if(!message.guild || message.author.bot) return;
     const args = message.content.slice(config.prefix.length).trim().split(" ")
     const cmd = args.shift().toLowerCase()
-    if(cmd == "test"){
+    if(cmd == "!test"){
         let firstbutton = new MessageButton().setStyle("green").setID("1").setLabel("<")
         let secondbutton = new MessageButton().setStyle("blurple").setID("2").setLabel(">")
         let thirdbutton = new MessageButton().setStyle("red").setID("3").setLabel("JUMP TO OVERVIEW")
