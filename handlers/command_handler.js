@@ -1,20 +1,18 @@
 const fs = require('fs');
 module.exports = (client, Discord) => {
-  loadCommands(client.commands, './commands');
+  const cmdDirs = fs.readdirSync('./commands');
 
-  function loadCommands(collection, directory){
-      const files = fs.readdirSync(directory);
+  /* Loop through subdirectories in commands directory */
+  for (let dir of cmdDirs) {
+      /* Read every subdirectory and filter for JS files */
+      let commandFiles = fs.readdirSync(`./commands/${dir}`)
+      .filter(f => f.endsWith('.js'));
   
-      for (const file of files) { 
-          const path=`${directory}/${file}`;
-          
-          if(file.endsWith('.js')){
-              const command = require(path);
-              collection.set(command.name, command); 
-          }
-          else if(fs.lstatSync(path).isDirectory()){
-              loadCommands(collection, path);
-          }
+      /* Loop through every file */
+      for (let file of commandFiles) {
+          /* Set command file */
+          let command = require(`./commands/${dir}/${file}`);
+          client.commands.set(command.name, command);
     };
   };
         const validPermissions = [
