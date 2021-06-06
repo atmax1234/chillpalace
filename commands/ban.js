@@ -35,7 +35,7 @@ module.exports = {
           }
           // Otherwise, if no user was mentioned
         } else {
-          message.reply("You didn't mention the user to ban!");
+          message.reply("I can't find that!");
         }
     }
 };
