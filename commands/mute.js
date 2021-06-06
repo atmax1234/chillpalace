@@ -9,7 +9,7 @@ module.exports = {
  
             let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
             let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
-            if(!mainRole || muteRole) return message.channel.send(`Hey buddy! You are missing some roles!`)
+            if(!mainRole || !muteRole) return message.channel.send(`Hey buddy! You are missing some roles!`)
 
             let memberTarget = message.guild.members.cache.get(target.id);
  
