@@ -18,17 +18,14 @@ module.exports = {
              * There are big differences between a user and a member
              */
             member
-              .kick('Idk Why..')
-              .then(() => {
-                // We let the message author know we were able to kick the person
-                message.reply(`Successfully kicked ${user.tag}`);
-              })
-              .catch(err => {
-                // An error happened
-                // This is generally due to the bot not being able to kick the member,
-                // either due to missing permissions or role hierarchy
-                message.reply('I was unable to kick the member');
-              });
+              .ban('Idk why it happend so quick...')
+              .then(member => {
+                guild.members.ban(id);
+                message.channel.send("*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* **" + member.displayName + "** *getting banned :hammer:*");
+            })
+            .catch(() => {
+                message.channel.send("Sorry, you can't ban this member");
+            });
           } else {
             // The mentioned user isn't in this guild
             message.reply("That user isn't in this guild!");
