@@ -4,24 +4,39 @@ module.exports = {
     description: "This command kicks a member!",
     permissions: ["KICK_MEMBERS"],
 
-    execute(message, args){
-        if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) {
-            return message.channel.send('You do not have the permission for kick users!');
+    execute(message, args, client){
+        if(!message.member.hasPermission('KICK_MEMBERS')) {
+            message.channel.send('You have no permissions to do that');
+            return;
+        };
+
+        //const a member, wich you need yo kick (its fist mention message member)
+        let mentionMember = message.mentions.members.first();
+        //If user dont mention a member, that show him this error msg
+        if(!mentionMember) {
+            message.channel.send('pls mention member witch you need to kick');
+            return;
         }
-        if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-            return message.channel.send("I don’t have the permission for kick users!");
-        }
-        if (message.mentions.users.size === 0) {
-            return message.channel.send("You need to ping a user or the user can't be found!");
-        }
-        var member = message.mentions.members.first();
-        member
-            .kick()
-            .then(member => {
-                message.channel.send(member.displayName + " has been successfully kicked");
-            })
-            .catch(() => {
-                message.channel.send("Sorry, you can't kick this member");
-            });
+
+        //Get the highest role of user for compare
+        let authorHighestRole = message.member.highestRole.position;
+        let mentionHighestRole = mentionMember.highestRole.position;
+
+        //If mention user have same or higher role, so show this error msg
+        if(mentionHighestRole >= authorHighestRole) {
+            message.channel.send('You can`t kick members with equal or higher position');
+            return;
+        };
+
+        //Check if your bot can`t kick this user, so that show this error msg 
+        if(!mentionMember.kickable) {
+            message.channel.send('I have no permissions to kick this user');
+            return
+        };
+
+        //If all steps are completed successfully try kick this user
+        mentionMember.kick()
+            .then(() => message.channel.send(`Kicked ${member.displayName}`))
+            .catch(err);
     }
 }
