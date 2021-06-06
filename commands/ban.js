@@ -21,7 +21,7 @@ module.exports = {
               .ban()
               .then(() => {
                 // We let the message author know we were able to kick the person
-                message.reply(`*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* **" + member.displayName + "** *getting banned :hammer:*`);
+                message.reply(`*It's a plane* :airplane:, *no its a bird* :bird:, *wait no its just* ** ${user.tag} ** *getting banned :hammer:*`);
               })
               .catch(err => {
                 // An error happened
