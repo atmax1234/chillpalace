@@ -3,7 +3,9 @@ module.exports = client => {
         const channel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
         if(!channel) return;
 
-        const welcomeEmbed = new Discord.MessageEmbed()
+        const message = ('Welcome to our server <@$member>! Make sure to check out the #rules!')
+        channel.send(message)
+     /*   const welcomeEmbed = new Discord.MessageEmbed()
         .setColor(pink)
         .setAuthor('ChillPalace')
         .setTitle('Welcome!')
@@ -12,6 +14,6 @@ module.exports = client => {
         .setFooter('Have fun!')
         .setTimestamp();
 
-    channel.send(welcomeEmbed);
+    channel.send(welcomeEmbed);*/
     })
 }
