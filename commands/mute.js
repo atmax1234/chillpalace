@@ -30,6 +30,6 @@ module.exports = {
         else {
             message.channel.send('Something went wrong!');
         }
-        if(target.id == message.author.id) return message.channel.send(`Are you trying to mute yourself!? What is wrong with you?`)
+        if(target == message.author) return message.channel.send(`Are you trying to mute yourself!? What is wrong with you?`)
     }
 }
