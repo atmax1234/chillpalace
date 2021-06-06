@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: 'reactionrole',
+    aliases: ['rrole'],
     description: "Sets up a reaction role message!",
     permissions: [],
 
@@ -26,6 +27,7 @@ module.exports = {
         messageEmbed.react(blueTeamEmoji);
  
         client.on('messageReactionAdd', async (reaction, user) => {
+            if(!yellowTeamRole || !blueTeamRole) return message.channel.send('You are missing role(s)')
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;
