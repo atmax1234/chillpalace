@@ -19,7 +19,6 @@ client.on('guildMemberAdd', guildMember =>{
     guildMember.roles.add(welcomeRole);
     guildMember.guild.channels.cache.get(channel).send(`Welcome <@${guildMember.user.id}> to our server! Make sure to check out the rules channel!`)
 });*/
-welcome(client)
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
 })
