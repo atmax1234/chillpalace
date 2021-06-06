@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { MessageButton } = require("discord-buttons")
+const { MessageButton, MessageActionRow } = require("discord-buttons")
 
 module.exports = {
     name: 'help',
@@ -32,17 +32,17 @@ module.exports = {
         const next = new MessageButton()
         .setStyle("green")
         .setLabel("Next")
-        .setID("next")
+        .setID("1")
         const back = new MessageButton()
         .setStyle("red")
         .setLabel("Back")
-        .setID("back")
+        .setID("2")
         let row = new MessageActionRow()
-        .addComponent(myButton)
-        .addComponent(myButton2);
+        .addComponent(next)
+        .addComponent(back)
         message.channel.send({
-            component: row,
-            embed: embed
+            embed: embed,
+            component: row
     })
     }
 };
