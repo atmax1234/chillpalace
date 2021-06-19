@@ -27,6 +27,7 @@ module.exports = {
         messageEmbed.react(blueTeamEmoji);
  
         client.on('messageReactionAdd', async (reaction, user) => {
+            if(message.author.bot) return
             if(!yellowTeamRole || !blueTeamRole) return message.channel.send('You are missing role(s)')
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
