@@ -20,14 +20,14 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/HywjPEB.png')
             .setColor(0x7732a8);
 
-        if (args[2]){
+        if (args[1]){
             const embed2 = new MessageEmbed()
                 .setTitle(`Does ${user.username} and ${user3.username} match?`)
                 .setDescription(`${user.username} and ${user3.username} are __**${replies[result]}**__`)
                 .setThumbnail('https://i.imgur.com/HywjPEB.png')
                 .setColor(0x7732a8); 
                   
-            if(args[3]) return message.channel.send(`You tryna gather a gang bang or wha\'?!`);
         }
+        if(args[2]) return message.channel.send(`You tryna gather a gang bang or wha\'?!`);
     }
 };
