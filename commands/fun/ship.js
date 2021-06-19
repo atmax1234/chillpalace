@@ -1,3 +1,4 @@
+const {MessageEmbed} = require('discord.js');
 module.exports = {
     name: 'ship',
     description: "Looking for ur wife?",
@@ -15,7 +16,7 @@ module.exports = {
 
         if (!args[0]) return message.channel.send(`Please mention a user!`)
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
             .setTitle(`Does ${message.author.username} and ${user.username} match?`)
             .setDescription(`${message.author.username} and ${user.username} are __**${replies[result]}**__`)
             .setThumbnail('https://i.imgur.com/HywjPEB.png')
@@ -23,7 +24,7 @@ module.exports = {
 
         if(!args[2]) return message.channel.send(embed);
 
-        const embed2 = new Discord.MessageEmbed()
+        const embed2 = new MessageEmbed()
             .setTitle(`Does ${user.username} and ${user3.username} match?`)
             .setDescription(`${user.username} and ${user3.username} are __**${replies[result]}**__`)
             .setThumbnail('https://i.imgur.com/HywjPEB.png')
