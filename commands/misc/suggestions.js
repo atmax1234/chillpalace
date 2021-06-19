@@ -7,7 +7,7 @@ module.exports = {
     description: 'Creates a suggestion!',
 
     execute(message, args, client, Discord){
-        const channel = message.guild.channels.cache.find(c => c.name === 'suggestions');
+        const channel = message.guild.channels.cache.find(c => c.name === '「💡」𝘀𝘂𝗴𝗴𝗲𝘀𝘁𝗶𝗼𝗻𝘀');
         if(!channel){
             return message.channel.send('suggestions channel does not exist!');
         }
