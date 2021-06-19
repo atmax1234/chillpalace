@@ -14,22 +14,19 @@ module.exports = {
 
         let result = Math.floor((Math.random() * replies.length))
 
-        if (!args[0]) return message.channel.send(`Please mention a user!`)
-
         const embed = new MessageEmbed()
             .setTitle(`Does ${message.author.username} and ${user.username} match?`)
             .setDescription(`${message.author.username} and ${user.username} are __**${replies[result]}**__`)
             .setThumbnail('https://i.imgur.com/HywjPEB.png')
             .setColor(0x7732a8);
 
-        if(!args[2]) return message.channel.send(embed);
-
+        if (args[2])
         const embed2 = new MessageEmbed()
             .setTitle(`Does ${user.username} and ${user3.username} match?`)
             .setDescription(`${user.username} and ${user3.username} are __**${replies[result]}**__`)
             .setThumbnail('https://i.imgur.com/HywjPEB.png')
             .setColor(0x7732a8); 
               
-        if(!args[3]) return message.channel.send(embed2);
+        if(args[3]) return message.channel.send(`You tryna gather a gang bang or wha\'?!`);
     }
 };
