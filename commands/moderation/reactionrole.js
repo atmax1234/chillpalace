@@ -9,8 +9,8 @@ module.exports = {
     async execute(message, Discord, client) {
         try{
         const channel = message.channel.id;
-        const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "Ladies");
-        const blueTeamRole = message.guild.roles.cache.find(role => role.name === "Boys");
+        const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "「🙎」𝖫𝖠𝖣𝖨𝖤𝖲");
+        const blueTeamRole = message.guild.roles.cache.find(role => role.name === "「👦」BOYS");
  
         const yellowTeamEmoji = '👩';
         const blueTeamEmoji = '👨';

@@ -10,7 +10,7 @@ module.exports = {
     execute(message, args) {
         const target = message.mentions.users.first();
         if (target) {
-            let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
+            let mainRole = message.guild.roles.cache.find(role => role.name === '「👤」 𝖬𝖤𝖬𝖡𝖤𝖱');
             let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
             if(!mainRole || !muteRole){
                 return message.channel.send(new MessageEmbed()
