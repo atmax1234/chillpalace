@@ -30,7 +30,25 @@ for (const folder of commandFolders) {
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
+    const arrayOfStatus = [
+        `My prefix is: ${prefix}`,
+        `${client.guilds.cache.size} servers`,
+        `Porn.. so dont distrube me!`
+      ];
 
+      let index = 0;
+      setInterval(() => {
+        if (index === arrayOfStatus.length) index = 0;
+        const status = arrayOfStatus[index];
+        client.user.setPresence({
+          status: 'dnd',
+          activity: {
+            type: 'WATCHING',
+            name: status
+          }
+        })
+        index++;
+      }, 10000)
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
