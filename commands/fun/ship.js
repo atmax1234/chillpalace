@@ -7,7 +7,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 5,
     execute(message, args, client, Discord) {
-        const user = message.mentions.users.first() || message.author;
+        const user = message.mentions.users.first()
         const user3 = message.mentions.users.array()[2]; 
 
         let replies = ["5% Compatible!", "3% Compatible!", "10% Compatible!", "14% Compatible!", "17% Compatible!", "20% Compatible!", "22% Compatible!", "25% Compatible!", "24% Compatible!", "27% Compatible!", "32% Compatible!", "36% Compatible!", "34% Compatible!", "39% Compatible!", "42% Compatible!", "45% Compatible!", "47% Compatible!", "51% Compatible!", "54% Compatible!", "56% Compatible!", "59% Compatible!", "58% Compatible!", "60% Compatible!", "63% Compatible!", "65% Compatible!", "64% Compatible!", "68% Compatible!", "70% Compatible!", "74% Compatible!", "78% Compatible!", "79% Compatible!", "80% Compatible!", "83% Compatible!", "86% Compatible!", "84% Compatible!", "89% Compatible!", "91% Compatible!", "93% Compatible!", "95% Compatible!", "97% Compatible!", "98% Compatible!", "99% Compatible!", "100% Compatible!", "destined to get married."];
