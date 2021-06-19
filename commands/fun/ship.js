@@ -13,7 +13,7 @@ module.exports = {
 
         let result = Math.floor((Math.random() * replies.length))
 
-        if (!args[1]) return message.channel.send(`Please mention a user!`)
+        if (!args[0]) return message.channel.send(`Please mention a user!`)
 
         const embed = new Discord.MessageEmbed()
             .setTitle(`Does ${message.author.username} and ${user.username} match?`)
