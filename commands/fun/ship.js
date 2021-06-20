@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const getMember = require('../../shipfunc.js')
+const { getMember } = require('../../shipfunc.js')
 
 module.exports = {
     name: 'ship',
