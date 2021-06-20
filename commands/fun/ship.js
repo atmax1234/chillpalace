@@ -1,39 +1,30 @@
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require("discord.js");
+const { getMember } = require("../../functions.js");
+
 module.exports = {
     name: 'ship',
-    description: "Looking for ur wife?",
-    args: true,
-    usage: "<@user>",
+    description: 'Calculates the love affinity you have for another person.',
     guildOnly: true,
-    cooldown: 5,
-    execute(message, args, client, Discord) {
-        var count = 0; //To find out what user we're on.
-        let user1; //Defining the users
-        let user2; //Defining the users
-        message.mentions.forEach(user => {
-            count++; //Adding one onto the count variable
-            if (count >= 3) return; //If the user mentioned more than two users return
-            if (count === 1) user1 = message.guild.members.fetch(user.id); //Getting the first mentioned user
-            else user2 = message.guild.members.fetch(user.id); //Getting the second mentioned user
-        });
+    usage: "<mention | id | username>",
+    async execute(client, message, args){
 
-        let replies = ["5% Compatible!", "3% Compatible!", "10% Compatible!", "14% Compatible!", "17% Compatible!", "20% Compatible!", "22% Compatible!", "25% Compatible!", "24% Compatible!", "27% Compatible!", "32% Compatible!", "36% Compatible!", "34% Compatible!", "39% Compatible!", "42% Compatible!", "45% Compatible!", "47% Compatible!", "51% Compatible!", "54% Compatible!", "56% Compatible!", "59% Compatible!", "58% Compatible!", "60% Compatible!", "63% Compatible!", "65% Compatible!", "64% Compatible!", "68% Compatible!", "70% Compatible!", "74% Compatible!", "78% Compatible!", "79% Compatible!", "80% Compatible!", "83% Compatible!", "86% Compatible!", "84% Compatible!", "89% Compatible!", "91% Compatible!", "93% Compatible!", "95% Compatible!", "97% Compatible!", "98% Compatible!", "99% Compatible!", "100% Compatible!", "destined to get married."];
+        let person = getMember(message, args[0]);
 
-        let result = Math.floor((Math.random() * replies.length))
-        if (count === 1){
+        if (!person || message.author.id === person.id) {
+            person = message.guild.members
+                .filter(m => m.id !== message.author.id)
+                .random();
+        }
+
+        const love = Math.random() * 100;
+        const loveIndex = Math.floor(love / 10);
+        const loveLevel = "💖".repeat(loveIndex) + "💔".repeat(10 - loveIndex);
+
         const embed = new MessageEmbed()
-            .setTitle(`Does ${message.author.username} and ${user1.username} match?`)
-            .setDescription(`${message.author.username} and ${user1.username} are __**${replies[result]}**__`)
-            .setThumbnail('https://i.imgur.com/HywjPEB.png')
-            .setColor(0x7732a8);
-        }
-        if (count === 2){
-            const embed2 = new MessageEmbed()
-                .setTitle(`Does ${user1.username} and ${user2.username} match?`)
-                .setDescription(`${user1.username} and ${user2.username} are __**${replies[result]}**__`)
-                .setThumbnail('https://i.imgur.com/HywjPEB.png')
-                .setColor(0x7732a8); 
-                  
-        }
+            .setColor("#ffb6c1")
+            .addField(`☁ **${person.displayName}** loves **${message.member.displayName}** this much:`,
+            `💟 ${Math.floor(love)}%\n\n${loveLevel}`);
+
+        message.channel.send(embed);
     }
-};
+}
