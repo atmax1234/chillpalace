@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { getMember } = require('../../shipfunc.js')
 
 module.exports = {
     name: 'ship',
@@ -8,12 +7,12 @@ module.exports = {
     usage: "<mention | id | username>",
     async execute(message, args, client){
 
-        let person = getMember(message, args[0]);
+        let person = message.mentions.members.first() || await message.guild.members.fetch(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
         if (!person || message.author.id === person.id) {
             person = message.guild.members
                 .filter(m => m.id !== message.author.id)
-                .random();
+                message.guild.members.random();
         }
 
         const love = Math.random() * 100;
