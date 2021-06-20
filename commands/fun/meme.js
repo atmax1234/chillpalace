@@ -9,9 +9,9 @@ module.exports = {
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
         const img = await randomPuppy(random);
-        const embed = new Discord.MessageEmbed()
-        .setColor(16776960)
-        .setFooter("test")
+        const embed = new MessageEmbed()
+        .setColor('RANDOM')
+        .setFooter("Chill Palace")
         .setImage(img)
         .setTitle(`Random Meme requested by <@${message.author.tag}>`)
         .setURL(`https://reddit.com/r/${random}`)
