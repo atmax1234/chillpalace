@@ -5,7 +5,7 @@ module.exports = {
   aliases: ['b'],
   description: "Use this command to ban a specified user!",
   args: true,
-  usage: "<@user>",
+  usage: "<@user> <reason>",
   permissions: ["BAN_MEMBERS"],
   guildOnly: true,
 

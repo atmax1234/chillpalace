@@ -5,7 +5,7 @@ module.exports = {
   aliases: ['k'],
   description: "Use this command to kick a specified user!",
   args: true,
-  usage: "<@user>",
+  usage: "<@user> <reason>",
   permissions: ["KICK_MEMBERS"],
   guildOnly: true,
 
