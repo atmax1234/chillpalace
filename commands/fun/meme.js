@@ -13,7 +13,7 @@ module.exports = {
         .setColor('RANDOM')
         .setFooter("Chill Palace")
         .setImage(img)
-        .setTitle(`Random Meme requested by <@${message.author.tag}>`)
+        .setTitle(`Random Meme requested by ${message.author.tag}`)
         .setURL(`https://reddit.com/r/${random}`)
         message.channel.send(embed);
     }
