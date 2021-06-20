@@ -13,7 +13,19 @@ module.exports = {
 
         let embed = new MessageEmbed()
             .setColor('GREEN')
-            .setDescription(`[${msg}](https://open.spotify.com/search/${msglink})`)
+            .addFields({
+                name: 'Spotify Search Engine',
+                value: `Developed by aTmAx`,
+                inline: true
+              },{
+                name: 'Results for:',
+                value: `${msg}`,
+                inline: true
+              },{
+                name: 'Click to check the results and play the song you want',
+                value: `[${msg}](https://open.spotify.com/search/${msglink})`,
+                inline: true
+              })
             message.channel.send(embed)
         }
 }
