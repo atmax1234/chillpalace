@@ -6,7 +6,7 @@ module.exports = {
     description: 'Calculates the love affinity you have for another person.',
     guildOnly: true,
     usage: "<mention | id | username>",
-    async execute(client, message, args){
+    async execute(message, args, client){
 
         let person = getMember(message, args[0]);
 
