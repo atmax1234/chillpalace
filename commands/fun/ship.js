@@ -22,7 +22,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setColor("#ffb6c1")
-            .addField(`☁ **${person.displayName}** loves **${message.member.displayName}** this much:`,
+            .addField(`☁ **${person.user.username}** loves **${message.member.username}** this much:`,
             `💟 ${Math.floor(love)}%\n\n${loveLevel}`);
 
         message.channel.send(embed);
