@@ -16,7 +16,7 @@ module.exports = {
                 .setTitle(randomQuote.author)
                 .setDescription(randomQuote.text)
                 .setColor('GREEN')
-                .setFooter(member.displayName, member.user.displayAvatarURL())
+                .setFooter(message.member.displayName, message.member.user.displayAvatarURL())
                 .setTimestamp()
             return message.channel.send(quoteEmbed);
         }
