@@ -21,12 +21,12 @@ module.exports = {
                 name: '\u200B',
                 value: '\u200B'
               },{
-                name: '\u200B',
-                value: '\u200B'
-              },{
                 name: 'Results for :',
                 value: `${msg}`,
                 inline: true
+              },{
+                name: '\u200B',
+                value: '\u200B'
               },{
                 name: 'Click to check the results and play the song you want',
                 value: `[${msg}](https://open.spotify.com/search/${msglink})`,
