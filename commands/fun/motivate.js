@@ -6,7 +6,7 @@ module.exports = {
     description: 'Get a random motivation quote',
     guildOnly: true,
     usage: "<username | nickname | mention | ID](optional)>",
-    async execute(client, message, args) {
+    async execute(message, args, client) {
         let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
         const randomQuote = jsonQuotes.quotes[Math.floor((Math.random() * jsonQuotes.quotes.length))];
