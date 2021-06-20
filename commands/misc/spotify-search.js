@@ -18,7 +18,10 @@ module.exports = {
                 value: `Developed by aTmAx`,
                 inline: true
               },{
-                name: 'Results for:',
+                name: '\u200B',
+                value: '\u200B'
+              },{
+                name: 'Results for :',
                 value: `${msg}`,
                 inline: true
               },{
@@ -26,6 +29,7 @@ module.exports = {
                 value: `[${msg}](https://open.spotify.com/search/${msglink})`,
                 inline: true
               })
+            .setAuthor('Chill Palace', 'https://image.flaticon.com/icons/png/512/174/174872.png')
             message.channel.send(embed)
         }
 }
