@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const jsonQuotes = require('../../motivational.json')
 
 module.exports = {
-    name: 'motivation',
+    name: 'motivate',
     description: 'Get a random motivation quote',
     guildOnly: true,
     usage: "<username | nickname | mention | ID](optional)>",
