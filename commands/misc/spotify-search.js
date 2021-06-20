@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js');
 module.exports = {
-    name: 'spotify',
+    name: 'spotify-search',
     description: 'Spotify Search',
-    aliases: ['spotify-search'],
+    aliases: ['spot-s'],
     args: true,
     usage: "<song name>",
 
