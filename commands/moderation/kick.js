@@ -72,8 +72,7 @@ module.exports = {
             value: `${message.author.username}`,
             inline: true
           })
-        ).catch(console.error);
-		}
+        )}
         catch (error){
           message_reply(`There was an error trying to execute that command!`)
         }
