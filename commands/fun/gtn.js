@@ -1,3 +1,5 @@
+const { MessageCollector, MessageEmbed } = require('discord.js');
+
 module.exports = {
 	name: 'gtn',
 	description: 'Guess The Number',
