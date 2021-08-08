@@ -47,7 +47,7 @@ module.exports = {
         });
         
         collector.on('end', async(collected) => {
-            if(finished == false) return message.reply(`You timed out!`);
+            if(finished == false) return message.reply(`You timed out!\nThe correct answer was:${number}`);
         });
     }
 };
